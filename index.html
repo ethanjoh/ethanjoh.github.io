@@ -1,20 +1,159 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETHANJOH | 방구석 개발자</title>
+    <meta name="description" content="ETHANJOH - 방구석 개발자의 포트폴리오 랜딩 페이지">
+    <!-- Google Fonts: Outfit (English) & Noto Sans KR (Korean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background overlay for depth -->
+    <div class="grid-overlay"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
 
-<div class="home">
+    <header>
+        <div class="logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-text">ETHANJOH</span>
+            <span class="logo-bracket">/&gt;</span>
+        </div>
+        <nav>
+            <a href="https://github.com/ethanjoh" target="_blank" class="nav-link">
+                <span class="icon">🐙</span> GitHub
+            </a>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle retro mode">
+                <span class="btn-icon">💡</span> <span class="btn-text">Light Switch</span>
+            </button>
+        </nav>
+    </header>
 
-  <h1>Posts</h1>
+    <main class="container">
+        <!-- Left Side: Introduction & Status -->
+        <section class="intro-section">
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span class="badge-text">STATUS: ACTIVE IN COZY CORNER</span>
+            </div>
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+            <h1 class="main-title">
+                <span class="title-sub">CREATIVE DEVELOPER</span>
+                <span class="title-main">ETHANJOH</span>
+            </h1>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+            <h2 class="subtitle">
+                <span class="typing-text"></span><span class="cursor">|</span>
+            </h2>
 
-</div>
+            <p class="description">
+                골방 구석에서 조용히 코드를 짜며, 상상을 현실로 만들어내는 풀스택 개발자입니다. 
+                게임처럼 몰입감 있는 인터랙티브 웹과 견고한 시스템 아키텍처를 만듭니다.
+            </p>
+
+            <!-- Interactive Terminal Dashboard -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <div class="window-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="card-title">ethan_room_system.sh</span>
+                </div>
+                <div class="card-body">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">COFFEES CONSUMED</span>
+                            <span class="stat-value text-glow">1,024+ Cups</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">LINES OF CODE</span>
+                            <span class="stat-value text-glow">999,999+</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">MAIN SPEC</span>
+                            <span class="stat-value text-glow">Javascript / Python</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">CURRENT LOCATION</span>
+                            <span class="stat-value text-glow">The Corner Desk</span>
+                        </div>
+                    </div>
+                    <div class="terminal-command">
+                        <span class="prompt">$</span> <span class="cmd-run">npm run dev --room-mode=cozy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links / Action Buttons -->
+            <div class="action-buttons">
+                <a href="https://github.com/ethanjoh" target="_blank" class="primary-btn">
+                    <span class="btn-glow-bg"></span>
+                    <span class="btn-content">GitHub 프로필 방문</span>
+                </a>
+                <button id="ping-btn" class="secondary-btn">
+                    <span class="btn-content">방 두드리기 (Ping)</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Right Side: 2.5D Isometric Room (Parallax Interactive Container) -->
+        <section class="room-section">
+            <div class="room-wrapper" id="room-wrapper">
+                <div class="room-perspective" id="room-perspective">
+                    <div class="isometric-room-card">
+                        <!-- Holographic screen effects -->
+                        <div class="screen-glow"></div>
+                        
+                        <!-- Room background image (Generated Image) -->
+                        <img src="assets/dev_room_2_5d.png" alt="2.5D Developer Room" class="room-image" id="room-image">
+                        
+                        <!-- Interactive hotspot markers overlay -->
+                        <div class="hotspot pin-monitor" data-tip="Main Setup: 24/7 coding & gaming">
+                            <span class="pin-pulse"></span>
+                            <span class="pin-dot"></span>
+                        </div>
+                        <div class="hotspot pin-bed" data-tip="Sleep Station: Powered by coffee and bugs">
+                            <span class="pin-pulse"></span>
+                            <span class="pin-dot"></span>
+                        </div>
+                        <div class="hotspot pin-shelf" data-tip="Reference Books & Vintage Console">
+                            <span class="pin-pulse"></span>
+                            <span class="pin-dot"></span>
+                        </div>
+                        <div class="hotspot pin-window" data-tip="The Matrix: Outside world is currently loading...">
+                            <span class="pin-pulse"></span>
+                            <span class="pin-dot"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Floor shadow -->
+                    <div class="room-shadow"></div>
+                </div>
+            </div>
+            
+            <!-- Tooltip displays here dynamically -->
+            <div class="hotspot-tooltip" id="room-tooltip">
+                마우스를 움직여 방을 둘러보세요. 핀을 클릭해보세요!
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom alert container for ping action -->
+    <div class="custom-alert" id="custom-alert">
+        <span class="alert-emoji">🚪</span>
+        <span class="alert-msg">방구석 개발자가 코딩에 열중하고 있어 대답이 없습니다. (똑똑!)</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ETHANJOH. Designed for the cozy developers around the world.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
